@@ -10,7 +10,7 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import '../styles/main.module.scss';
-import * as styles from '../styles/top.module.scss';
+import * as styles from '../styles/index.module.scss';
 
 export default () => {
   return (

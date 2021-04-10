@@ -8,23 +8,25 @@
  */
 
 import React from 'react';
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import '../styles/main.module.scss';
 import * as styles from '../styles/index.module.scss';
+import MenuCard from '../components/MenuCard';
 
 export default () => {
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.icon_and_name}>
         <StaticImage width={150} src='../images/icon.jpg' alt='icon' />
         <h2>Welcome</h2>
       </div>
 
       <div className={styles.menu}>
-        <p>1st</p>
-        <p>2nd</p>
-        <p>3rd</p>
+        <MenuCard text='Blog' url='/blog' icon='edit' />
+        <MenuCard text='Profile' url='/profile' icon='format_list_bulleted' />
+        <MenuCard text='Portfolio' url='/portfolio' icon='flight_takeoff' />
       </div>
-    </>
+    </div>
   );
 }

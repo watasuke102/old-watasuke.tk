@@ -8,9 +8,8 @@
  */
 
 import React from 'react';
-import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
-import '../styles/main.module.scss';
+import '../styles/main.scss';
 import * as styles from '../styles/index.module.scss';
 import MenuCard from '../components/MenuCard';
 

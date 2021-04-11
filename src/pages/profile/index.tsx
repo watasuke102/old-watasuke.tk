@@ -8,10 +8,27 @@
  */
 
 import React from 'react';
-import '../../styles/main.module.scss';
+import { graphql } from 'gatsby';
+import '../../styles/main.scss';
 
-export default () => {
+export default ({ data }) => {
+  const post = data.markdownRemark;
   return (
-    <h2>my profile</h2>
-  );
+    <>
+      <h1>{post.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    </>
+  )
+
 }
+
+export const query = graphql`
+query {
+  markdownRemark(frontmatter:{slug:{eq: "profile"}}) {
+    frontmatter {
+      title
+      slug
+    }
+    html
+  }
+}`;

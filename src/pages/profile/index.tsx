@@ -9,9 +9,10 @@
 
 import React from 'react';
 import { graphql } from 'gatsby';
+import Article from '../../types/Article';
 import '../../styles/main.scss';
 
-export default ({ data }) => {
+export default ({ data }: Article) => {
   const post = data.markdownRemark;
   return (
     <>

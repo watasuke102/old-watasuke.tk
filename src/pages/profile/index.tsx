@@ -13,11 +13,20 @@ import Article from '../../types/Article';
 import '../../styles/main.scss';
 
 export default ({ data }: Article) => {
+  const [title, SetTitle] = React.useState('');
+  const [body, SetBody] = React.useState('');
   const post = data.markdownRemark;
+
+  fetch('http://localhost:1337/articles').then(r => r.json()).then(res => {
+    const data = res[0];
+    console.log(data);
+    SetTitle(data['title']);
+    SetBody(data['body'].replace('/uploads/', 'http://localhost:1337/uploads/'));
+  })
   return (
     <>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <h1>{title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: body }} />
     </>
   )
 

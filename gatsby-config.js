@@ -7,6 +7,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,7 +16,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -22,13 +23,11 @@ module.exports = {
         path: `${__dirname}/src/md-pages`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `watasuke.tk`,
+        short_name: `watasuke.tk`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -39,8 +38,9 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
+    // マークダウンをHTMLにする
     `gatsby-transformer-remark`,
-    
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

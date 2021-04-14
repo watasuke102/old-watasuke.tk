@@ -8,15 +8,24 @@
  */
 
 import React from 'react';
+import { Remark } from 'react-remark';
+import Article from '../types/Article';
 import '../styles/main.scss';
 
-export default ({ pageContext }) => {
+interface Props {
+  pageContext: Article
+}
+
+export default (prop: Props) => {
+  const data = prop.pageContext;
   console.info('This is DATA');
-  console.info(pageContext);
   return (
     <>
-      <h1>{pageContext.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: pageContext.body }} />
+      <h1>{data.title}</h1>
+      {/* 画像のURLを置き換える*/}
+      <Remark>
+        {data.body.replace('/uploads/', 'http://localhost:1337/uploads/')}
+      </Remark>
     </>
   )
 }

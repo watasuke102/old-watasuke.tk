@@ -8,13 +8,9 @@
  */
 
 export default interface Article {
-  data: {
-    markdownRemark: {
-      frontmatter: {
-        title: string,
-        slug: string
-      }
-      html: string
-    }
-  }
+  title: string,
+  body: string,
+  thumbnail: string,
+  published_at: string,
+  updated_at: string,
 }
